@@ -94,30 +94,30 @@ public class FileManager {
         }
     }
 
-    public void createFile(char patient_num, String filenum, String isCharged, String percentage) {
-        Log.e(TAG, "creating File" + STRSAVEPATH);
-        File dir = makeDirectory(STRSAVEPATH);
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
-        this.saveLogData("createFile", "NE file create");
-
-        filePathNum = patient_num;
-        SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
-
-        if (filenum == "0") {
-            filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
-        }
-        for (int i = 0; i < 1000; i++) {
-            filename = String.format("Patient_" + patient_num + "_NE_" + dateFormat.format(c.getTime()) + "_" + filenum + "_" + isCharged + percentage + ".csv", i);
-            File file = new File(STRSAVEPATH + filename);
-            if (isFileExist(file) == false) {
-                makeFile(dir, (STRSAVEPATH + filename));
-                startTimeMillis = System.currentTimeMillis();
-//                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
-                break;
-            }
-        }
-    }
+//    public void createFile(char patient_num, String filenum, String isCharged, String percentage) {
+//        Log.e(TAG, "creating File" + STRSAVEPATH);
+//        File dir = makeDirectory(STRSAVEPATH);
+//        Calendar c = Calendar.getInstance();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+//        this.saveLogData("createFile", "NE file create");
+//
+//        filePathNum = patient_num;
+//        SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
+//
+//        if (filenum == "0") {
+//            filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
+//        }
+//        for (int i = 0; i < 1000; i++) {
+//            filename = String.format("Patient_" + patient_num + "_NE_" + dateFormat.format(c.getTime()) + "_" + filenum + "_" + isCharged + percentage + ".csv", i);
+//            File file = new File(STRSAVEPATH + filename);
+//            if (isFileExist(file) == false) {
+//                makeFile(dir, (STRSAVEPATH + filename));
+//                startTimeMillis = System.currentTimeMillis();
+////                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
+//                break;
+//            }
+//        }
+//    }
 
     public void createLogFile(char patient_num, String filenum) {
         Log.e(TAG, "creating File");
@@ -135,10 +135,10 @@ public class FileManager {
         for (int i = 0; i < 1000; i++) {
             File file;
             if (filenum == "init") {
-                filenameLog = String.format("Patient_" + patient_num + "_Log_" + filePathDate + "_" + filenum + ".csv", i);
+                filenameLog = String.format("Subject_" + patient_num + "_Log_" + filePathDate + "_" + filenum + ".csv", i);
                 file = new File(STRSAVEPATH + filenameLog);
             } else {
-                filenameLog = String.format("Patient_" + patient_num + "_Log_" + dateFormat.format(c.getTime()) + "_" + filenum + ".csv", i);
+                filenameLog = String.format("Subject_" + patient_num + "_Log_" + dateFormat.format(c.getTime()) + "_" + filenum + ".csv", i);
                 file = new File(STRSAVEPATH + filenameLog);
             }
             if (isFileExist(file) == false) {
@@ -162,7 +162,7 @@ public class FileManager {
         this.saveLogData("createMoFile", "Mo file create");
 
         for (int i = 0; i < 1000; i++) {
-            filenameMo = String.format("Patient_" + patient_num + "_Mo_" + dateFormat.format(c.getTime()) + "_" + filenum + "_" + ".csv", i);
+            filenameMo = String.format("Subject_" + patient_num + "_Mo_" + dateFormat.format(c.getTime()) + "_" + filenum + "_" + ".csv", i);
             File file = new File(STRSAVEPATH + filenameMo);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH + filenameMo));
@@ -324,7 +324,7 @@ public class FileManager {
             fos.close();
             updateTimeMillis = System.currentTimeMillis();
         } catch (IOException e) {
-            Log.w(TAG, "save_meta_Data");
+//            Log.w(TAG, "save_meta_Data");
         }
     }
 

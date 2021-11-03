@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <Switch
         android:id="@+id/switchMetawear_0"
         android:layout_width="match_parent"
@@ -32,4 +33,35 @@
         android:id="@+id/txtGyroSensorOutput_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+<!--    <Switch-->
+<!--        android:id="@+id/switchMetawear_2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtSensorOutput_2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtGyroSensorOutput_2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/switchMetawear_3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtSensorOutput_3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtGyroSensorOutput_3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
 </LinearLayout>
